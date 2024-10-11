@@ -11,7 +11,7 @@ const LifeChangingJourney = () => {
           You’re only one click away <br /> from a life-changing journey
         </h1>
         <Link
-          to="/welcome"
+          to="/auth/signin"
           className="bg-[#e95d53] hover:bg-rose-700 transition-all px-7 py-2 rounded-md font-[600] text-[20px]"
         >
           Try AI for Free

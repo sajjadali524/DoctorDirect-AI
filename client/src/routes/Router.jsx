@@ -17,9 +17,14 @@ import PersonalChat from "../pages/chat/PersonalChat";
 import ChatHistory from "../pages/chat/ChatHistory";
 import TestResults from "../pages/chat/TestResults";
 import AddNewTest from "../pages/chat/AddNewTest";
+import DoctorSignup from "../pages/auth/DoctorSignup";
+import Experts from "../pages/Experts";
+import Doctors from "../pages/Doctors";
+import AdminDashboard from "../pages/admin/AdminDashboard";
 
 const routes = () => {
   const isAuthenticated = window.localStorage.getItem("token");
+  const isAdmin = window.localStorage.getItem("admin");
   return (
     <Routes>
       {isAuthenticated && (
@@ -33,6 +38,8 @@ const routes = () => {
           <Route path="/dashboard/chat-history" element={<ChatHistory />} />
           <Route path="/dashboard/test-results" element={<TestResults />} />
           <Route path="/dashboard/test-results/new" element={<AddNewTest />} />
+          <Route path="/dashboard/experts" element={<Experts />} />
+          <Route path="/dashboard/experts/:id" element={<Doctors />} />
         </>
       )}
         <>
@@ -44,8 +51,13 @@ const routes = () => {
           <Route path="/auth/signin" element={isAuthenticated ? <Navigate to="/dashboard" /> : <Signin />} />
           <Route path="/auth/signup" element={isAuthenticated ? <Navigate to="/dashboard" /> : <Signup />} />
           <Route path="/auth/forgot-password" element={isAuthenticated ? <Navigate to="/dashboard" /> : <ForgotPassword />} />
+          <Route path="/auth/doctor-signup" element={<DoctorSignup />} />
           <Route path="*" element={isAuthenticated ? <Navigate to="/dashboard" /> : <NotFound />} />
         </>
+
+        {isAdmin &&
+          <Route path="/admin-dashboard" element={<AdminDashboard />} />
+        }
       </Routes> 
   )
 }

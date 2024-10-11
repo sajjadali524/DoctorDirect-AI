@@ -27,7 +27,7 @@ const HowItWork = ({ title, desc, button, howitwork = [] }) => {
       </div>
 
       <div className="pt-16">
-        <PrimaryButton text={button} path="/welcome" />
+        <PrimaryButton text={button} path="/auth/signin" />
       </div>
     </div>
   );

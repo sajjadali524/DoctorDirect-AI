@@ -27,12 +27,17 @@ const Signin = () => {
         inputData,
         { withCredentials: true }
       );
-      window.localStorage.setItem("token", response.data.token);
-      window.localStorage.setItem("username", response.data.user.username);
-      if (response.data.user.isProfileCompletd === true) {
-        window.location.href = "/dashboard";
-      } else {
-        window.location.href = "/welcome";
+      if(response.data.user.role === "user") {
+        window.localStorage.setItem("token", response.data.token);
+        window.localStorage.setItem("username", response.data.user.username);
+        if (response.data.user.isProfileCompletd === true) {
+          window.location.href = "/dashboard";
+        } else {
+          window.location.href = "/welcome";
+        }
+      }else {
+        window.localStorage.setItem("admin", response.data.token);
+        window.location.href = "/admin-dashboard"
       }
     } catch (error) {
       toast.error("Incorrect email & password", {

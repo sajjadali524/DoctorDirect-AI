@@ -6,7 +6,7 @@ import { PiCardsThreeFill } from "react-icons/pi";
 const AIchat = () => {
   const username = localStorage.getItem("username");
   return (
-    <div className="flex flex-col items-center pt-[210px]">
+    <div className="flex flex-col items-center pt-[210px] px-3 pb-20">
       <div className="flex items-center justify-center  w-28 h-28 bg-lightBlue rounded-full">
         <img src={personal_ai_doctor} alt="img" className="w-20 h-20" />
       </div>

@@ -7,7 +7,7 @@ import DashboardHeader from "./components/DashboardHeader";
 const App = () => {
   const location = useLocation();
   const showHeaderAndFooter = ["/", "/ai-doctor", "/supplement", "/lab-test-interpretation", "/second-openion"];
-  const hideHeaderAndFooter = ["/welcome/general-info", "/welcome", "/auth/signin", "/auth/signup", "/auth/forgot-password"];
+  const hideHeaderAndFooter = ["/welcome/general-info", "/welcome", "/auth/signin", "/auth/signup", "/auth/forgot-password", "/auth/doctor-signup"];
   
   const shouldShowHeaderAndFooter = showHeaderAndFooter.includes(location.pathname);
   const shouldHideHeaderAndFooter = hideHeaderAndFooter.includes(location.pathname);

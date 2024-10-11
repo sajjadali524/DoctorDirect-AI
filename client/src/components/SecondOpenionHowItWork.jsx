@@ -47,7 +47,7 @@ const SecondOpenionHowItWork = ({ secondOpenionHowItWork = [] }) => {
 
           <div className="pt-10">
             <Link
-              to="/doctors"
+              to="/auth/signin"
               className="text-center bg-darkBlue font-[600] text-[18px] px-7 py-3 rounded-md hover:bg-slate-800 transition-all text-white"
             >
               Find Doctor

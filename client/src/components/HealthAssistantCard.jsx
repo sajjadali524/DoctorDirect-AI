@@ -38,7 +38,7 @@ const HealthAssistantCard = ({
       </div>
       {button && (
         <div className="flex justify-center mt-10">
-          <PrimaryButton text={button} path="/welcome" />
+          <PrimaryButton text={button} path="/auth/signin" />
         </div>
       )}
       {users && (

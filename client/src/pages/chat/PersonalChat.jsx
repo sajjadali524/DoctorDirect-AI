@@ -8,9 +8,17 @@ import { useState } from "react";
 const PersonalChat = () => {
   const username = localStorage.getItem("username");
   const [isToggle, setIsToggle] = useState(false);
+  var chats = "";
+  const [input, setInput] = useState("");
+
+  const sendChat = () => {
+    chats += input;
+    setInput("")
+    console.log(chats)
+  };
   return (
-    <div className="flex justify-center pt-[80px] bg-[#f8f9f9] w-full h-screen">
-      <div className="w-3/4 relative">
+    <div className="flex justify-center pt-[80px] bg-[#f8f9f9] w-full h-screen px-3">
+      <div className="lg:w-3/4 w-full relative">
         <div className="flex items-center gap-3 pb-10">
           <button onClick={() => window.history.back()}>
             <FaArrowLeftLong className="hover:text-darkBlue" />
@@ -25,13 +33,19 @@ const PersonalChat = () => {
         </div>
 
         {/* messagess */}
-        <div></div>
+        <div>
+          {/* {chats.map((val, index) => {
+            return (<h1 key={index}>{val}</h1>)
+          })} */}
+        </div>
 
         <div className="space-y-3 w-full p-5 bg-white border border-slate-200 absolute bottom-5 rounded-lg">
           <input
             type="text"
             placeholder="Type your question here..."
             className="w-full outline-none bg-transparent"
+            onChange={(e) => setInput(e.target.value)}
+            value={input}
           />
           <div className="flex items-center justify-between">
             <MdOutlineAttachFile
@@ -39,7 +53,7 @@ const PersonalChat = () => {
               onClick={() => setIsToggle(!isToggle)}
             />
             <div className="flex items-center justify-center bg-darkBlue rounded-sm p-1">
-              <MdSend className="cursor-pointer text-[20px] bg-darkBlue text-white" />
+              <MdSend className="cursor-pointer text-[20px] bg-darkBlue text-white" onClick={sendChat} />
             </div>
           </div>
         </div>

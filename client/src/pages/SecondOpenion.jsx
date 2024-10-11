@@ -73,7 +73,7 @@ const SecondOpenion = () => {
           </div>
 
           <div className="flex justify-center pt-16">
-            <PrimaryButton text="Choose Top Doctor" path="/doctors" />
+            <PrimaryButton text="Choose Top Doctor" path="/auth/signin" />
           </div>
         </div>
       </div>
@@ -101,7 +101,7 @@ const SecondOpenion = () => {
         </p>
         <div className="pt-10">
           <Link
-            to="/welcome"
+            to="/auth/signin"
             className="text-center bg-darkBlue font-[600] text-[18px] px-7 py-3 rounded-md hover:bg-slate-400 transition-all text-white"
           >
             Chat with AI Doctor

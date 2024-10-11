@@ -1,4 +1,5 @@
 const jwt = require("jsonwebtoken");
+const User = require("../models/userModel");
 
 const isAuthenticated = async(req, res, next) => {
     const token = await req.cookies.token;
@@ -9,7 +10,10 @@ const isAuthenticated = async(req, res, next) => {
         }
 
         const decode = jwt.verify(token, process.env.TOKEN_SECRET);
-        req.userId = decode.userId;
+        const user = await User.findById(decode.userId);
+        if(user.role !== "admin") {
+            req.userId = decode.userId;
+        }
         next();
 
     } catch (error) {

@@ -57,11 +57,11 @@ const Overview = () => {
   return (
     <>
       <div
-        className={`flex items-center justify-center pt-[80px] bg-[#f8f9f9] w-full h-screen ${
+        className={`flex items-center justify-center pt-[80px] bg-[#f8f9f9] w-full lg:h-screen md:h-screen pb-10 px-3 ${
           isOpen && "opacity-10"
         }`}
       >
-        <div className="w-3/4">
+        <div className="lg:w-3/4 w-full">
           <div className="flex items-center gap-3 pb-10">
             <button onClick={() => window.history.back()}>
               <FaArrowLeftLong className="hover:text-darkBlue" />
@@ -73,7 +73,7 @@ const Overview = () => {
             <h1 className="text-left text-[20px] font-[600] pb-10">
               GENERAL INFORMATION
             </h1>
-            <div className="flex items-center justify-center">
+            <div className="lg:flex md:flex block items-center justify-center">
               <div className="space-y-3 w-full">
                 <div className="flex flex-col items-end justify-end bg-[#f8f9f9] rounded-md border border-slate-200 px-3 py-2">
                   <div className="flex items-center gap-2">
@@ -123,7 +123,7 @@ const Overview = () => {
                 <img
                   src={user_profile}
                   alt="user_profile"
-                  className="w-[300px]"
+                  className="lg:w-[300px] md:w-[300px] w-[200px]"
                 />
               </div>
 

@@ -7,7 +7,7 @@ export const homeHero = [
         position: "end",
         detail: "Prevent potential health issues and effectively manage your health. Gain insights with our AI Doctor and validate them with top paskistani doctors.",
         button: "Try AI for Free",
-        path: "/welcome",
+        path: "/auth/signin",
         image: home_Hero
     }
 ];
@@ -165,7 +165,7 @@ export const aiDoctorHero = [
         position: "start",
         detail: "DocAI Doctor can be your first step toward an accurate diagnosis. Get recommendations, validate with top doctors, and stay healthy.",
         button: "Try AI for Free",
-        path: "/welcome",
+        path: "/auth/signin",
         image: aidoctor_Hero
     }
 ];
@@ -192,7 +192,7 @@ export const aidoctorHealthJourney = [
         ],
         button: "Start Journey",
         image: ai_doctor_image_1,
-        path: "/welcome"
+        path: "/auth/signin"
     },
     {
         title: "Consult Your AI Doctor",
@@ -213,7 +213,7 @@ export const aidoctorHealthJourney = [
         ],
         button: "Start Chat",
         image: ai_doctor_image_2,
-        path: "/welcome"
+        path: "/auth/signin"
     },
     {
         title: "Validate Your Recommendations",
@@ -234,7 +234,7 @@ export const aidoctorHealthJourney = [
         ],
         button: "View Doctors",
         image: ai_doctor_image_3,
-        path: "/welcome"
+        path: "/auth/signin"
     },
 ];
 
@@ -347,7 +347,7 @@ export const ltiHero = [
         detail: "Our AI Doctor can easily analyze and interpret your lab tests, providing clear and actionable health information.",
         tasks: ["Upload your lab tests", "Receive valuable insights and recommendations", "Make informed health decisions"],
         button: "Try for Free",
-        path: "/welcome",
+        path: "/auth/signin",
         image: lti_Hero
     }
 ];
@@ -408,7 +408,7 @@ export const ltiHealthJourney = [
         ],
         button: "Explore Your Biomarkers",
         image: lti_image_1,
-        path: "/welcome"
+        path: "/auth/signin"
     },
     {
         title: "Detailed Lab Test Reports",
@@ -429,7 +429,7 @@ export const ltiHealthJourney = [
         ],
         button: "Get Your Report",
         image: lti_image_2,
-        path: "/welcome"
+        path: "/auth/signin"
     },
     {
         title: "Interaction with AI Doctor",
@@ -450,7 +450,7 @@ export const ltiHealthJourney = [
         ],
         button: "Talk to AI Doctor",
         image: lti_image_3,
-        path: "/welcome"
+        path: "/auth/signin"
     },
 ];
 
@@ -532,7 +532,7 @@ export const lrassLti = [
         detail: "Start managing your health smarter! Upload your lab tests, receive detailed interpretations and personalized recommendations from our AI Doctor, and take action based on informed insights.",
         image: lti_image_4,
         button: "Talk to AI Doctor",
-        path: "/welcome"
+        path: "/auth/signin"
     }
 ];
 
@@ -577,7 +577,7 @@ export const supplementHero = [
         detail: "Discover the perfect supplements designed specifically for your health goals.",
         tasks: ["Take the Checkup Quiz", "Get Your Personalized Report", "Order Your Tailored Supplement Kit"],
         button: "Take the Quiz",
-        path: "/welcome",
+        path: "/auth/signin",
         image: supplement_Hero
     }
 ];
@@ -645,7 +645,7 @@ export const lrassSupplemtent = [
         detail: "Start your wellness journey today! Take the checkup quiz, receive tailored recommendations from our AI Doctor, customize your supplements, and have them delivered straight to your door.",
         image: review_product,
         button: "Talk to AI Doctor",
-        path: "/welcome"
+        path: "/auth/signin",
     }
 ];
 

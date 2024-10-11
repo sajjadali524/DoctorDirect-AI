@@ -4,8 +4,8 @@ import { CiCalendarDate } from "react-icons/ci";
 
 const AddNewTest = () => {
   return (
-    <div className="flex justify-center pt-[80px] bg-[#f8f9f9] w-full">
-      <div className="w-3/4 relative">
+    <div className="flex justify-center pt-[80px] bg-[#f8f9f9] w-full px-3 pb-10">
+      <div className="lg:w-3/4 w-full relative">
         <div className="flex items-center gap-3 pb-3">
           <button onClick={() => window.history.back()}>
             <FaArrowLeftLong className="hover:text-darkBlue" />
@@ -16,9 +16,9 @@ const AddNewTest = () => {
         <p className="text-[18px] opacity-80">Note: Only text-based results are accepted. No imaging (e.g., CT, X-ray, MRI).</p>
 
         <div className=" bg-white w-full flex flex-col items-center justify-items-center mt-5">
-          <div className="flex flex-col items-center justify-items-center text-center gap-5 w-1/2 py-10">
+          <div className="flex flex-col items-center justify-items-center text-center gap-5 lg:w-1/2 w-full py-10">
 
-          <div className="w-2/3 space-y-5">
+          <div className="lg:w-2/3 w-full space-y-5 px-3 rounded-sm">
             <select className="outline-none p-3 border border-gray-300 cursor-pointer w-full">
                 <option>Choose the test result type</option>
                 <option>Blood</option>
