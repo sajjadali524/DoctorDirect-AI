@@ -61,6 +61,7 @@ const handleForm = (e) => {
                     'Content-Type': 'multipart/form-data',
                 },
             });
+            window.location.href="/"
             console.log("response: ", response.data);
     } catch (error) {
       console.log(error)

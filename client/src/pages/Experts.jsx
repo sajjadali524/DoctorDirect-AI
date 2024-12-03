@@ -12,11 +12,15 @@ const Experts = () => {
   const [input, setInput] = useState("");
   useEffect(() => {
     const getAcceptedDoctors = async () => {
-      const response = await axios.get(
-        "http://localhost:8000/api/doctor/accept-doctors"
-      );
-      setAcceptedDoctors(response.data.acceptedDoctors);
-      setFilterDoctors(response.data.acceptedDoctors);
+      try {
+        const response = await axios.get(
+          "http://localhost:8000/api/doctor/accept-doctors", {withCredentials: true}
+        );
+        setAcceptedDoctors(response.data.acceptedDoctors);
+        setFilterDoctors(response.data.acceptedDoctors);
+      } catch (error) {
+        console.log(error)
+      }
     };
     getAcceptedDoctors();
   }, []);
@@ -36,7 +40,7 @@ const Experts = () => {
   }, [input, acceptedDoctors]);
 
   return (
-    <div className="flex lg:justify-center pt-[80px] bg-[#f8f9f9] w-full h-screen px-3">
+    <div className="flex lg:justify-center pt-[80px] bg-[#f8f9f9] w-full px-3 pb-10">
       <div className="w-3/4 relative">
         <div className="flex items-center gap-3 pb-10">
           <button onClick={() => window.history.back()}>

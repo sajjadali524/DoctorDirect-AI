@@ -31,7 +31,7 @@ const AIchat = () => {
           History
         </Link>
         <Link
-          to="/dashboard/chat/personal"
+          to="/dashboard/chat/last-chat"
           className="flex items-center gap-3 border border-darkBlue py-3 px-5 text-midnightBlue font-[600] text-[16px] rounded-md mt-5 hover:bg-lightBlue transition-all"
         >
           <PiCardsThreeFill className="text-[20px] text-darkBlue" /> Last Chat

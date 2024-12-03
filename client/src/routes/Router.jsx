@@ -21,6 +21,12 @@ import DoctorSignup from "../pages/auth/DoctorSignup";
 import Experts from "../pages/Experts";
 import Doctors from "../pages/Doctors";
 import AdminDashboard from "../pages/admin/AdminDashboard";
+import AllUsers from "../pages/admin/AllUsers";
+import AcceptedDoctors from "../pages/admin/AcceptedDoctors";
+import RejectedDoctors from "../pages/admin/RejectedDoctors";
+import PendingDoctors from "../pages/admin/PendingDoctors";
+import ViewChatFromHistory from "../pages/chat/ViewChatFromHistory";
+import LastChat from "../pages/chat/LastChat";
 
 const routes = () => {
   const isAuthenticated = window.localStorage.getItem("token");
@@ -36,6 +42,8 @@ const routes = () => {
           <Route path="/dashboard/chat/choose" element={<ChatChoose />} />
           <Route path="/dashboard/chat/personal" element={<PersonalChat />} />
           <Route path="/dashboard/chat-history" element={<ChatHistory />} />
+          <Route path="/dashboard/chat/chat-history/:id" element={<ViewChatFromHistory />} />
+          <Route path="/dashboard/chat/last-chat" element={<LastChat />} />
           <Route path="/dashboard/test-results" element={<TestResults />} />
           <Route path="/dashboard/test-results/new" element={<AddNewTest />} />
           <Route path="/dashboard/experts" element={<Experts />} />
@@ -43,21 +51,28 @@ const routes = () => {
         </>
       )}
         <>
-          <Route path="/" element={isAuthenticated ? <Navigate to="/dashboard" /> : <Home />} />
-          <Route path="/ai-doctor" element={isAuthenticated ? <Navigate to="/dashboard" /> : <Aidoctor />} />
-          <Route path="/lab-test-interpretation" element={isAuthenticated ? <Navigate to="/dashboard" /> : <LabTestInterpretation />} />
-          <Route path="/supplement" element={isAuthenticated ? <Navigate to="/dashboard" /> : <Supplements />} />
-          <Route path="/second-openion" element={isAuthenticated ? <Navigate to="/dashboard" /> : <SecondOpenion />} />
-          <Route path="/auth/signin" element={isAuthenticated ? <Navigate to="/dashboard" /> : <Signin />} />
-          <Route path="/auth/signup" element={isAuthenticated ? <Navigate to="/dashboard" /> : <Signup />} />
-          <Route path="/auth/forgot-password" element={isAuthenticated ? <Navigate to="/dashboard" /> : <ForgotPassword />} />
-          <Route path="/auth/doctor-signup" element={<DoctorSignup />} />
-          <Route path="*" element={isAuthenticated ? <Navigate to="/dashboard" /> : <NotFound />} />
+          <Route path="/" element={isAuthenticated ? <Navigate to="/dashboard" /> : isAdmin ? <Navigate to="/admin-dashboard" /> : <Home />} />
+          <Route path="/ai-doctor" element={isAuthenticated ? <Navigate to="/dashboard" /> : isAdmin ? <Navigate to="/admin-dashboard" /> : <Aidoctor />} />
+          <Route path="/lab-test-interpretation" element={isAuthenticated ? <Navigate to="/dashboard" /> : isAdmin ? <Navigate to="/admin-dashboard" /> : <LabTestInterpretation />} />
+          <Route path="/supplement" element={isAuthenticated ? <Navigate to="/dashboard" /> : isAdmin ? <Navigate to="/admin-dashboard" /> : <Supplements />} />
+          <Route path="/second-openion" element={isAuthenticated ? <Navigate to="/dashboard" /> : isAdmin ? <Navigate to="/admin-dashboard" /> : <SecondOpenion />} />
+          <Route path="/auth/signin" element={isAuthenticated ? <Navigate to="/dashboard" /> : isAdmin ? <Navigate to="/admin-dashboard" /> : <Signin />} />
+          <Route path="/auth/signup" element={isAuthenticated ? <Navigate to="/dashboard" /> : isAdmin ? <Navigate to="/admin-dashboard" /> : <Signup />} />
+          <Route path="/auth/forgot-password" element={isAuthenticated ? <Navigate to="/dashboard" /> : isAdmin ? <Navigate to="/admin-dashboard" /> : <ForgotPassword />} />
+          <Route path="/auth/doctor-signup" element={isAuthenticated ? <Navigate to="/dashboard" /> : isAdmin ? <Navigate to="/admin-dashboard" /> : <DoctorSignup />} />
+          <Route path="*" element={isAuthenticated ? <Navigate to="/dashboard" /> : isAdmin ? <Navigate to="/admin-dashboard" /> : <NotFound />} />
         </>
 
-        {isAdmin &&
-          <Route path="/admin-dashboard" element={<AdminDashboard />} />
-        }
+        {isAdmin && (
+          <>
+            <Route path="/admin-dashboard" element={<AdminDashboard />} />
+            <Route path="/all-users" element={<AllUsers />} />
+            <Route path="/accepted-doctors" element={<AcceptedDoctors />} />
+            <Route path="/pending-doctors" element={<PendingDoctors />} />
+            <Route path="/rejected-doctors" element={<RejectedDoctors />} />
+            {/* <Route path="*" element={<NotFound />} /> */}
+          </>
+        )}
       </Routes> 
   )
 }

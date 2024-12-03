@@ -27,7 +27,11 @@ const Signin = () => {
         inputData,
         { withCredentials: true }
       );
-      if(response.data.user.role === "user") {
+      if(response.data.user.role === "admin") {
+        window.localStorage.setItem("admin", response.data.token);
+        window.location.href= "/admin-dashboard";
+      }else {
+
         window.localStorage.setItem("token", response.data.token);
         window.localStorage.setItem("username", response.data.user.username);
         if (response.data.user.isProfileCompletd === true) {
@@ -35,9 +39,6 @@ const Signin = () => {
         } else {
           window.location.href = "/welcome";
         }
-      }else {
-        window.localStorage.setItem("admin", response.data.token);
-        window.location.href = "/admin-dashboard"
       }
     } catch (error) {
       toast.error("Incorrect email & password", {
@@ -110,13 +111,13 @@ const Signin = () => {
             </p>
           </div>
 
-          <div className="flex items-center gap-2 pt-3">
+          {/* <div className="flex items-center gap-2 pt-3">
             <span className="w-full h-[2px] bg-gray-200"></span>
             <p className="text-[14px]">OR</p>
             <span className="w-full h-[2px] bg-gray-200"></span>
-          </div>
+          </div> */}
 
-          <div className="space-y-2">
+          {/* <div className="space-y-2">
             <Link
               to=""
               className="flex items-center gap-3 border border-slate-300 p-2 rounded-md font-[500] text-[18px] hover:bg-gray-200"
@@ -138,7 +139,7 @@ const Signin = () => {
               <FaSquareXTwitter className="text-darkBlue text-[25px]" />
               Continue with X (Twitter)
             </Link>
-          </div>
+          </div> */}
         </form>
       </div>
     </div>

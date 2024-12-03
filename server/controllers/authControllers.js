@@ -41,7 +41,7 @@ exports.loginUser = async (req, res) => {
             return res.status(409).json({message: "email and password is incorrect"});
         }
 
-        const token = jwt.sign({userId: user.id}, process.env.TOKEN_SECRET, {expiresIn: "1d"});
+        const token = jwt.sign({userId: user._id}, process.env.TOKEN_SECRET, {expiresIn: "1d"});
         res.cookie("token", token, {httpOnly: true, maxAge: 24 * 60 * 60 * 1000});
         return res.status(200).json({message: "user login", user, token})
         

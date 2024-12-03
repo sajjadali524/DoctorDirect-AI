@@ -53,7 +53,7 @@ const Signup = () => {
           className="w-full lg:px-16 md:px-10 px-3 space-y-2"
           onSubmit={signupUser}
         >
-          <div className="space-y-2">
+          {/* <div className="space-y-2">
             <Link
               to=""
               className="flex items-center gap-3 border border-slate-300 p-2 rounded-md font-[500] text-[18px] hover:bg-gray-200"
@@ -75,14 +75,14 @@ const Signup = () => {
               <FaSquareXTwitter className="text-darkBlue text-[25px]" />
               Continue with X (Twitter)
             </Link>
-          </div>
+          </div> */}
 
-          <div className="flex items-center gap-2 py-5">
+          {/* <div className="flex items-center gap-2 py-5">
             <span className="w-full h-[2px] bg-gray-200"></span>
             <p className="text-[14px]">OR</p>
             <span className="w-full h-[2px] bg-gray-200"></span>
             <hr />
-          </div>
+          </div> */}
 
           <div className="flex items-center gap-2 border border-slate-300 p-3 rounded-sm">
             <FaRegUserCircle className="text-[20px] opacity-70" />

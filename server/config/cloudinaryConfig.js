@@ -9,12 +9,19 @@ cloudinary.config({
 
 const uploadFileToCloudinary = (file, resourceType, folderName) => {
     return new Promise((resolve, reject) => {
-        cloudinary.uploader.upload_stream({ resource_type: resourceType, folder: folderName }, (error, result) => {
+        const uploadOptions = {
+            resource_type: resourceType, // raw for documents, image for images
+            folder: folderName,
+            public_id: file.originalname, // Using original name to store file with the same name
+            overwrite: true, // Overwrite if file with the same name exists
+        };
+
+        cloudinary.uploader.upload_stream(uploadOptions, (error, result) => {
             if (error) {
                 return reject(error);
             }
-            resolve(result);
-        }).end(file.buffer);  // Use file.buffer instead of file.stream.pipe()
+            resolve(result); // File upload result with URL
+        }).end(file.buffer); // Upload file buffer
     });
 };
 

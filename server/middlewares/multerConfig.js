@@ -7,7 +7,8 @@ const singleUpload = multer({
 }).fields([
     { name: 'profile_photo', maxCount: 1 },
     { name: 'cv', maxCount: 1 },
-    { name: 'document', maxCount: 1 }
+    { name: 'document', maxCount: 1 },
+    { name: 'file', maxCount: 1 },
 ]);
 
 module.exports = singleUpload;

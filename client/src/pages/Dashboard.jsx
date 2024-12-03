@@ -1,6 +1,5 @@
 import {
   personal_ai_doctor,
-  lab_test_interpretation,
   top_doctor,
 } from "../constants/images";
 import { Link } from "react-router-dom";
@@ -52,7 +51,7 @@ const Dashboard = () => {
           </Link>
         </div>
 
-        <div className="w-full h-fit border border-slate-200 rounded-md bg-white hover:shadow-sm">
+        {/* <div className="w-full h-fit border border-slate-200 rounded-md bg-white hover:shadow-sm">
           <Link
             to="/dashboard/test-results"
             className="flex items-center justify-between w-full px-5 py-2"
@@ -69,7 +68,7 @@ const Dashboard = () => {
               className="w-[70px]"
             />
           </Link>
-        </div>
+        </div> */}
 
         <div className="w-full h-fit border border-slate-200 rounded-md bg-white hover:shadow-sm">
           <Link

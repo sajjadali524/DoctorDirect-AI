@@ -1,5 +1,5 @@
 import { IoHomeSharp } from "react-icons/io5";
-import { MdNotifications } from "react-icons/md";
+// import { MdNotifications } from "react-icons/md";
 import { FaUserCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import axios from "axios";
@@ -33,7 +33,7 @@ const DashboardHeader = () => {
         My Dashboard
       </Link>
       <div className="flex items-center gap-5">
-        <MdNotifications className="text-[25px] cursor-pointer" />
+        {/* <MdNotifications className="text-[25px] cursor-pointer" /> */}
         <FaUserCircle
           className="text-[25px] cursor-pointer"
           onClick={() => setIsVisible(!isVisible)}
