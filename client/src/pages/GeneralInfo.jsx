@@ -18,7 +18,7 @@ const GeneralInfo = () => {
   const submitData = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:8000/api/user/profile", inputData, {withCredentials: true});
+      await axios.post("https://doctordirect-ai.onrender.com/api/user/profile", inputData, {withCredentials: true});
       navigate("/dashboard")
     } catch (error) {
       console.log(error)

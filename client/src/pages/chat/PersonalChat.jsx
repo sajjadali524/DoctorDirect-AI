@@ -19,7 +19,7 @@ const PersonalChat = () => {
     const fetchActiveChat = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8000/api/chat/activeChat",
+          "https://doctordirect-ai.onrender.com/api/chat/activeChat",
           { withCredentials: true }
         );
         if (response.data.chatHistory) {
@@ -64,7 +64,7 @@ const PersonalChat = () => {
     }
   
     try {
-      const response = await axios.post("http://localhost:8000/api/chat/newChat", formData, {
+      const response = await axios.post("https://doctordirect-ai.onrender.com/api/chat/newChat", formData, {
         headers: {
           "Content-Type": "multipart/form-data", // Important for file uploads
         },
@@ -86,7 +86,7 @@ const PersonalChat = () => {
     window.history.back();
     try {
       const response = await axios.put(
-        "http://localhost:8000/api/chat/chats",
+        "https://doctordirect-ai.onrender.com/api/chat/chats",
         {},
         { withCredentials: true }
       );

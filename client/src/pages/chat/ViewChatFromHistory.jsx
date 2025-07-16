@@ -20,7 +20,7 @@ const ViewChatFromHistory = () => {
   const fetchSpecificChat = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:8000/api/chat/specificChat/${id}`,
+        `https://doctordirect-ai.onrender.com/api/chat/specificChat/${id}`,
         { withCredentials: true }
       );
       // console.log(response.data.specificChat.messages)
@@ -35,7 +35,7 @@ const ViewChatFromHistory = () => {
   const changeStatusToActive = async () => {
     try {
       const response = await axios.put(
-        `http://localhost:8000/api/chat/changestatustoactive/${id}`,
+        `https://doctordirect-ai.onrender.com/api/chat/changestatustoactive/${id}`,
         {},
         { withCredentials: true }
       );
@@ -84,7 +84,7 @@ const ViewChatFromHistory = () => {
     }
   
     try {
-      const response = await axios.post("http://localhost:8000/api/chat/newChat", formData, {
+      const response = await axios.post("https://doctordirect-ai.onrender.com/api/chat/newChat", formData, {
         headers: {
           "Content-Type": "multipart/form-data", // Important for file uploads
         },
@@ -105,7 +105,7 @@ const ViewChatFromHistory = () => {
     window.history.back();
     try {
       const response = await axios.put(
-        "http://localhost:8000/api/chat/chats",
+        "https://doctordirect-ai.onrender.com/api/chat/chats",
         {},
         { withCredentials: true }
       );

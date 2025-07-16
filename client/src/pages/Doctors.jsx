@@ -13,7 +13,7 @@ const Doctors = () => {
     const fetchDoctor = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8000/api/doctor/${id}`,
+          `https://doctordirect-ai.onrender.com/api/doctor/${id}`,
           { withCredentials: true }
         );
         setDoctor(response.data.doctor);
@@ -27,7 +27,7 @@ const Doctors = () => {
   const bookAppointment = async () => {
     try {
       await axios.post(
-        `http://localhost:8000/api/appointment/book/${id}`,
+        `https://doctordirect-ai.onrender.com/api/appointment/book/${id}`,
         {},
         {
           withCredentials: true,

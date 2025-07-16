@@ -11,7 +11,7 @@ const RejectedDoctors = () => {
     const fetchRejectedDoctors = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8000/api/admin/rejected-doctors",
+          "https://doctordirect-ai.onrender.com/api/admin/rejected-doctors",
           { withCredentials: true }
         );
         setRejectedDoctors(response.data.rejectedDoctors);
@@ -26,7 +26,7 @@ const RejectedDoctors = () => {
   const deleteDoctor = async (doctorId) => {
     try {
       await axios.delete(
-        `http://localhost:8000/api/admin/delete-doctor/${doctorId}`,
+        `https://doctordirect-ai.onrender.com/api/admin/delete-doctor/${doctorId}`,
         { withCredentials: true }
       );
       setRejectedDoctors(

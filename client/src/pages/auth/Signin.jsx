@@ -23,7 +23,7 @@ const Signin = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:8000/api/auth/login",
+        "https://doctordirect-ai.onrender.com/api/auth/login",
         inputData,
         { withCredentials: true }
       );

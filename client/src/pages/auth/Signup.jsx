@@ -24,7 +24,7 @@ const Signup = () => {
   const signupUser = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:8000/api/auth/register", inputData);
+      await axios.post("https://doctordirect-ai.onrender.com/api/auth/register", inputData);
       toast.success("Account created successfully", {
         position: "top-right",
         autoClose: 1000,

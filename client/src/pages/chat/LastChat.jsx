@@ -19,7 +19,7 @@ const LastChat = () => {
     const fetchSpecificChat = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8000/api/chat/lastChat`,
+          `https://doctordirect-ai.onrender.com/api/chat/lastChat`,
           { withCredentials: true }
         );
         if (response.data.updatedChat) {

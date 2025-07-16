@@ -12,7 +12,7 @@ const PendingDoctors = () => {
     const fetchPendingDoctors = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8000/api/admin/pending-doctors",
+          "https://doctordirect-ai.onrender.com/api/admin/pending-doctors",
           { withCredentials: true }
         );
         setPendingDoctors(response.data.pendingDoctors);
@@ -27,7 +27,7 @@ const PendingDoctors = () => {
   const rejectDoctor = async (doctorId) => {
     try {
       await axios.put(
-        `http://localhost:8000/api/admin/reject-doctor/${doctorId}`,
+        `https://doctordirect-ai.onrender.com/api/admin/reject-doctor/${doctorId}`,
         { withCredentials: true }
       );
       setPendingDoctors(pendingDoctors.filter((doctor) => doctor.id !== doctorId));
@@ -43,7 +43,7 @@ const PendingDoctors = () => {
 
   const acceptDoctor = async (doctorId) => {
     try {
-        await axios.put(`http://localhost:8000/api/admin/accept-doctor/${doctorId}`, {withCredentials: true});
+        await axios.put(`https://doctordirect-ai.onrender.com/api/admin/accept-doctor/${doctorId}`, {withCredentials: true});
         setPendingDoctors(pendingDoctors.filter((doctor) => doctor.id !== doctorId))
         toast.success("Doctor Accepted", {
             position: "top-right",

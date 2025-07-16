@@ -9,24 +9,24 @@ const AdminDashboard = () => {
   const [rejectedDoctors, setRejectedDoctors] = useState("");
   useEffect(() => {
     const fetchAllUsers = async() => {
-      const response = await axios.get("http://localhost:8000/api/admin/all-users", {withCredentials: true});
+      const response = await axios.get("https://doctordirect-ai.onrender.com/api/admin/all-users", {withCredentials: true});
       setAllUsers(response.data.length);
     };
 
     const fetchAllDoctors = async() => {
-      const response = await axios.get("http://localhost:8000/api/admin/all-doctors", {withCredentials: true});
+      const response = await axios.get("https://doctordirect-ai.onrender.com/api/admin/all-doctors", {withCredentials: true});
       setAllDoctors(response.data.length);
     };
     const fetchAcceptedDoctors = async() => {
-      const response = await axios.get("http://localhost:8000/api/admin/accepted-doctors", {withCredentials: true});
+      const response = await axios.get("https://doctordirect-ai.onrender.com/api/admin/accepted-doctors", {withCredentials: true});
       setAcceptedDoctors(response.data.length);
     };
     const fetchPendingDoctors = async() => {
-      const response = await axios.get("http://localhost:8000/api/admin/pending-doctors", {withCredentials: true});
+      const response = await axios.get("https://doctordirect-ai.onrender.com/api/admin/pending-doctors", {withCredentials: true});
       setPendingDoctors(response.data.length);
     };
     const fetchRejectedDoctors = async() => {
-      const response = await axios.get("http://localhost:8000/api/admin/rejected-doctors", {withCredentials: true});
+      const response = await axios.get("https://doctordirect-ai.onrender.com/api/admin/rejected-doctors", {withCredentials: true});
       setRejectedDoctors(response.data.length);
     };
 

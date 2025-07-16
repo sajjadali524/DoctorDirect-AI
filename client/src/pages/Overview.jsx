@@ -17,7 +17,7 @@ const Overview = () => {
     const gettingUserProfile = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8000/api/user/overview",
+          "https://doctordirect-ai.onrender.com/api/user/overview",
           { withCredentials: true }
         );
         setUserProfile(response.data.profile);
@@ -40,7 +40,7 @@ const Overview = () => {
     try {
       setIsOpen(false);
       const response = await axios.put(
-        "http://localhost:8000/api/user/overview/update",
+        "https://doctordirect-ai.onrender.com/api/user/overview/update",
         { userFieldCategory, userField },
         { withCredentials: true }
       );

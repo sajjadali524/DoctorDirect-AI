@@ -14,7 +14,7 @@ const Experts = () => {
     const getAcceptedDoctors = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8000/api/doctor/accept-doctors", {withCredentials: true}
+          "https://doctordirect-ai.onrender.com/api/doctor/accept-doctors", {withCredentials: true}
         );
         setAcceptedDoctors(response.data.acceptedDoctors);
         setFilterDoctors(response.data.acceptedDoctors);

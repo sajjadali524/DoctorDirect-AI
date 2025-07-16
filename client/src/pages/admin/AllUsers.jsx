@@ -11,7 +11,7 @@ const AllUsers = () => {
     const fetchAllUsers = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8000/api/admin/all-users",
+          "https://doctordirect-ai.onrender.com/api/admin/all-users",
           { withCredentials: true }
         );
         setAllUsers(response.data.allUsers);
@@ -26,7 +26,7 @@ const AllUsers = () => {
   const deleteUser = async (userId) => {
     try {
       await axios.delete(
-        `http://localhost:8000/api/admin/delete-user/${userId}`,
+        `https://doctordirect-ai.onrender.com/api/admin/delete-user/${userId}`,
         { withCredentials: true }
       );
       setAllUsers(allUsers.filter((user) => user.id !== userId));

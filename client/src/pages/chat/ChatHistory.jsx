@@ -10,7 +10,7 @@ const ChatHistory = () => {
   useEffect(() => {
     const fetchCompletedChats = async() => {
       try {
-        const response = await axios.get("http://localhost:8000/api/chat/completeChat", {withCredentials: true});
+        const response = await axios.get("https://doctordirect-ai.onrender.com/api/chat/completeChat", {withCredentials: true});
         setCompletedChat(response.data.chatHistory)
       } catch (error) {
         console.log(error)

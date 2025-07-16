@@ -56,7 +56,7 @@ const handleForm = (e) => {
             for (const key in formData) {
                 data.append(key, formData[key]);
             }
-            const response = await axios.post('http://localhost:8000/api/doctor/register', data, {
+            const response = await axios.post('https://doctordirect-ai.onrender.com/api/doctor/register', data, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },
