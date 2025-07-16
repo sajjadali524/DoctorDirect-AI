@@ -13,20 +13,25 @@ const Overview = () => {
   const [userFieldName, setUserFieldName] = useState("");
   const [userFieldCategory, setUserFieldCategory] = useState("");
 
-  useEffect(() => {
-    const gettingUserProfile = async () => {
-      try {
-        const response = await axios.get(
-          "https://doctordirect-ai.onrender.com/api/user/overview",
-          { withCredentials: true }
-        );
-        setUserProfile(response.data.profile);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    gettingUserProfile();
-  }, []);
+useEffect(() => {
+  const gettingUserProfile = async () => {
+    try {
+      const response = await axios.get(
+        "https://doctordirect-ai.onrender.com/api/user/overview",
+        {
+          withCredentials: true,
+          headers: {
+            "Content-Type": "application/json"
+          }
+        }
+      );
+      setUserProfile(response.data.profile);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  gettingUserProfile();
+}, []);
 
   const updateField = (profile, name, category) => {
     setIsOpen(true);
