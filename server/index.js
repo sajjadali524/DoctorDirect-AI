@@ -18,7 +18,7 @@ connectDB();
 
 // middlewares
 app.use(cors({
-    origin: "https://doctor-direct-9d2f8y19a-sajjad-alis-projects-89f14b84.vercel.app",
+    origin: "https://doctor-direct-ai.vercel.app",
     credentials: true
 }));
 app.options("*", cors());
