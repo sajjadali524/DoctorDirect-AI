@@ -20,7 +20,7 @@ connectDB();
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
-    origin: ["https://doctor-direct-ai.vercel.app/"],
+    origin: ["https://doctor-direct-ai.vercel.app"],
     credentials: true
 }));
 app.use(bodyParser.json());
