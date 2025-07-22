@@ -10,6 +10,7 @@ const Experts = () => {
   const [acceptedDoctors, setAcceptedDoctors] = useState([]);
   const [filterDoctors, setFilterDoctors] = useState([]);
   const [input, setInput] = useState("");
+
   useEffect(() => {
     const getAcceptedDoctors = async () => {
       try {
@@ -46,7 +47,7 @@ const Experts = () => {
           <button onClick={() => window.history.back()}>
             <FaArrowLeftLong className="hover:text-darkBlue" />
           </button>
-          <h1 className="text-[28px] font-[600]">Choose Top Doctor</h1>
+          <h1 className="lg:text-[28px] md:text-[23px] text-[18px] font-[600]">Choose Top Doctor</h1>
         </div>
 
         <div className="flex items-center justify-between py-2 px-5 border border-slate-200 bg-white lg:w-1/3 w-full rounded-md ml-1 mb-10">
@@ -59,15 +60,15 @@ const Experts = () => {
           <IoSearchOutline />
         </div>
 
-        <div className="grid grid-cols-3 gap-10">
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 justify-content-center gap-10 pb-5">
           {!filterDoctors.length > 0 ? (
-            <h1 className="text-[25px] font-[500]">Sorry! Not Found</h1>
+            <h1 className="lg:text-[25px] md:text-[20px] text-[17px] font-[500]">Sorry! Not Found</h1>
           ) : (
             filterDoctors.map((doctor, index) => {
               return (
                 <div
                   key={index}
-                  className="border border-slate-200 rounded-2xl cursor-pointer hover:border-slate-400"
+                  className="border border-slate-200 rounded-2xl cursor-pointer hover:border-slate-400 w-full"
                   onMouseOver={() => setIsVisible(index)}
                   onMouseOut={() => setIsVisible(null)}
                 >

@@ -55,16 +55,16 @@ const Doctors = () => {
           Book an Appointment
         </button>
       </div>
-      <div className="w-3/4 relative">
+      <div className="w-full px-3 relative">
         <div className="flex items-center gap-3 pb-10">
           <button onClick={() => window.history.back()}>
             <FaArrowLeftLong className="hover:text-darkBlue" />
           </button>
-          <h1 className="text-[28px] font-[600]">{`Doctor's Biography`}</h1>
+          <h1 className="lg:text-[28px] md:text-[23px] text-[18px] font-[600]">{`Doctor's Biography`}</h1>
         </div>
 
         <div className="space-y-10">
-          <div className="flex gap-20 p-5 bg-white border border-slate-300 rounded-lg">
+          <div className="flex gap-5 p-5 bg-white border border-slate-300 rounded-lg">
             <div className="w-1/3">
               <img
                 src={doctor.profile_photo}

@@ -18,7 +18,7 @@ const Dashboard = () => {
   }, [username]);
 
   return (
-    <div className="flex items-center justify-center w-full py-5 bg-[#f8f9f9] pt-[80px] px-3">
+    <div className="flex items-center justify-center w-full py-5 bg-[#f8f9f9] pt-[80px] px-3 h-[100vh]">
       <div className="lg:w-3/5 md:w-3/4 w/3/3 space-y-3">
         <div className="w-full h-fit border bg-white border-slate-200 rounded-md hover:shadow-sm">
           <Link
